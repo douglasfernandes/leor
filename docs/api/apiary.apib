@@ -1,0 +1,50 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# leor
+
+## Source [/Source]
+
+### List All Sources
+
++ Response 200 (application/json)
+
+        [
+            {
+                "source": "ENEM/2014",
+                "published_at": "2017-07-11",
+                "year": "2014",
+                "link": "http://www.ufpb.br/arquivos/enem2014"
+            }
+        ]
+
+
+### Create a New Source [POST]
+
+You may create your own source using this action. It takes a JSON
+object containing a source and a collection of sources in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "source": "ENEM/2015",
+            "published_at": "2017-07-11",
+            "year": "2015",
+            "link": "http://www.ufpb.br/arquivos/enem2017"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /sources/2
+
+    + Body
+
+            {
+            "source": "ENEM/2015",
+            "published_at": "2017-07-11",
+            "year": "2015",
+            "link": "http://www.ufpb.br/arquivos/enem2015"
+            }
