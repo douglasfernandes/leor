@@ -1,14 +1,15 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://leor.ufpb.br/
 
 # leor
 
-## Source [/source]
+## Source Collection [/sources]
 
-### List All Sources
+## Source [/sources/{source_id}]    
+
+### List All Sources [GET]
 
 + Response 200 (application/json)
-
     [
         {
             "title": "ENEM/2014",
@@ -25,6 +26,19 @@ HOST: http://polls.apiblueprint.org/
             "description": "There aren't sources"
         }
     ]
+
+### View a Sources Detail [GET]
++ Response 200 (application/json)
+    [
+        {
+            "title": "ENEM/2014",
+            "published_at": "2017-07-11",
+            "year": "2014",
+            "link": "http://www.ufpb.br/arquivos/enem2014"
+        }
+    ]
+
++ Response 200 (application/json)
 
 ### Create a New Source [POST]
 
@@ -45,7 +59,7 @@ form of choices.
 
     + Headers
 
-            Location: /sources/2
+            Location: /sources/1
 
     + Body
 
@@ -56,28 +70,46 @@ form of choices.
             "link": "http://www.ufpb.br/arquivos/enem2015"
             }
 
-## alternativeType(description,options)
-{"A..E","ABCDE"}
+### Delete [DELETE]
 
-##subject(name,abbreviation)
++ Response 204
+
+## alternativetype [/alternativetype]
+
+### To do ....
++ Response 201 (application/json)
+    + Body
+            {
+            "description": "A...E",
+            "options": "ABCDE"
+            }
+
+##subject [/subject]
+(name,abbreviation)
 Nome básico da disciplina
 
-## content(subject*,description,)
+## content [/content]
+(subject*,description,)
 O conteúdo de uma disciplina indica os assuntos aplicados tipo: equação do 2º grau, verbo, etc.
 
-## user(login,password,active,email,register_at,score)
+## user [/user]
+(login,password,active,email,register_at,score)
 Como poderemos assegurar que caso o usuário faça mal uso da aplicação, seja penalizado? log com ip?
 
-## userevaluation(usere*,userevaluator*,score,publish_at)
+## userevaluation [/userevaluation]
+(usere*,userevaluator*,score,publish_at)
 Todo usuário recebe avaliações de outro usuário que indicará sua reputação
 
-## adinfo(question*,description)
+## adinfo [/adinfo]
+(question*,description)
 A informação adicional de uma questão conterá metadados úteis na sua avaliação. Verificar definição LOR
 
-## area(name,description)
+## area [/area]
+(name,description)
 Área principal do professor
 
-##evaluation(user*,description,publish_at,preview_at,place_name)
+## evaluation [/evaluation]
+(user*,description,publish_at,preview_at,place_name)
 A avaliação é do professor que será aplicado em uma sala de aula, e tem data de publicação, 
 data prevista de aplicação, local da prova para que aparece o nome da instituição
 Ex: 
@@ -85,14 +117,18 @@ Escola XYZ
 Aluno: JOÂO
 Sendo a avaliação gerada num odt, o professor tem a liberdade para alterar o cabeçalho
 
-## evaluationversion(evaluation*,version,publish_at)
+## evaluationversion [/evaluationversion]
+(evaluation*,version,publish_at)
 As versões de uma avaliação são usadas para impedir a cola na aplicação, em cada versão existem questões e alternativas sorteadas aleatoriamente
 
-##question(description,publish_at,accepta_at,area*,adinfo*)
+## question [/question]
+(description,publish_at,accepta_at,area*,adinfo*)
 A questão é um texto com imagens, fórmulas e que serão apresentadas para o aluno na elaboração da avaliação
 
-## questionversion(question*,version,publish_at,accept_at)
+## questionversion [/questionversion]
+(question*,version,publish_at,accept_at)
 Sempre que uma questão for criada ou alterada, será criada uma versão que para se tornar pública, será necessário a avaliação e o aceite de 3 ou mais usuários
 
-## questionevaluation(questionversion*, score, accept, publish_at)
+## questionevaluation [/questionevaluation]
+(questionversion*, score, accept, publish_at)
 O usuário avalia n questões, aprovando, ou não, o conteúo.
