@@ -1,0 +1,20 @@
+
+Modelo da api:
+
+#source(title,publish_at,year,link)
+#{"ENEM/2014","2017-07-07",2014,"http://www.ufpb.br/arquivos/enem2014"}
+
+[GET] http://leor.ufpb.br/sources
+retorna uma coleção
+
+[GET] http://leor.ufpb.br/sources/{sources_id}
+retorna um objto
+
+[POST] http://leor.ufpb.br/sources/{sources_id}
+cria o objeto para ser atualizado apenas os campos informados
+
+[PUT] http://leor.ufpb.br/sources/{sources_id}
+envia o objeto para ser atualizado apenas os campos informados
+
+[DELETE] http://leor.ufpb.br/sources/{sources_id}
+apaga o objeto informado
