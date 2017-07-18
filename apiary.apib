@@ -760,8 +760,6 @@ That evaluation was made in an odt file and the teacher is free to change it.
 
 List all evaluations 
 
-user*,description,publish_at,preview_at,place_name
-
 + Request (application/json)
 
         {
@@ -804,7 +802,7 @@ Create a new evaluation through an object
 
         Result OK for new 
 
-## evaluation [/evaluations/{evaluation_id}]
+## Evaluation [/evaluations/{evaluation_id}]
 
 A user has many evaluations
 
@@ -852,6 +850,109 @@ A user has many evaluations
                 "description": "Period 1 - 8th - Mathematic",
                 "publish_at": "2017-07-18",
                 "place_name": "School X",
+            }
+                
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## EvaluationVersions Collection [/evaluationversions]
+
+Any evaluations has one many versions. Those are used to prevent cheating ons student test.
+
+Data diciotnary:
+evaluationversion(evaluation*,version,publish_at)
+
+### List All EvaluationVersions [GET]
+
+List all evaluationversions 
+
++ Request (application/json)
+
+        {
+            "evaluation": {evaluation},
+            "version": "1"
+            "publish_at": "2017-07-18"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+        
+            [
+                {
+                    "evaluation": {evaluation},
+                    "version": "1"
+                    "publish_at": "2017-07-18"
+                }
+            ]   
+
++ Response 204
+
+
+### Create a new EvaluationVersion  [POST]
+
+Create a new evaluationversion through an object
+
++ Request (application/json)
+
+            {
+                "evaluation": {evaluation},
+                "version": "1"
+                "publish_at": "2017-07-18"
+            }
+
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## EvaluationVersion [/evaluationversions/{evaluationversion_id}]
+
+A evaluationversion has a evaluation
+Answer from a evaluationversion through a *evaluationversion_id*.
+
+### Get a evaluationversion [GET]
++ Request 
+
+    + Headers
+
+            Location: /evaluationversions/{evaluationversion_id}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "evaluation": {evaluation},
+                "version": "1"
+                "publish_at": "2017-07-18"
+            }
+            
++ Response 204 
+
+### Delete [DELETE]
+
++ Request 
+
+    + Headers
+
+            Location: /evaluationversions/{evaluationversion_id}
+
++ Response 204
+
+### Update [PUT]
+
++ Request 
+
+    + Headers
+
+            Location: /evaluationversions/{evaluationversion_id}
+    + Body
+
+            {
+                "evaluation": {evaluation},
+                "version": "1"
+                "publish_at": "2017-07-18"
             }
                 
 + Response 201 (application/json)
