@@ -142,401 +142,121 @@ Answer from a source through a *source_id*.
         Result OK for new 
 
 
-## alternativetype Collection [/alternativetypes]
-## alternativetype [/alternativetypes/{alternativetype_id}]    
+## AlternativeType Collection [/alternativetypes]
 
 ### List All alternativetypes [GET]
+
+List all alternativetypes 
+
++ Request (application/json)
+
+            {
+                
+                "description": "A..E",
+                "options": "ABCDE"
+            
+            }
+
 + Response 200 (application/json)
-HTTP Status Codes : Ok
-    [
+
+    + Body
+        
+            [
+            
+                {
+            
+                "description": "A..E",
+                "options": "ABCDE"
+            
+                },
+                {
+            
+                "description": "A..E",
+                "options": "ABCDE"
+
+                }
+                
+            ]   
+
++ Request (application/json)
+
+            {
+        
+                "description": "A..E",
+                "options": "ABCDE"
+            
+            }
+
++ Response 204
+
+
+### Create a New Source  [POST]
+
+Create a new source through an object
+
++ Request (application/json)
+
         {
-            "description": "A..E",
-            "options": "ABCDE"
+
+                "description": "A..E",
+                "options": "ABCDE"
+
         }
-    ]
 
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No Content
-### View a alternativetype Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New alternativetype [POST]
-+ Request (application/json)
 + Response 201 (application/json)
-HTTP Status Codes : Created
+
+        Result OK for new 
+
+## Source [/alternativetypes/{source_id}]
+
+Answer from a source through a *source_id*.
+
+### Get a source [GET]
++ Request 
+
+    + Headers
+
+            Location: /alternativetypes/{source_id}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+        
+                "description": "A..E",
+                "options": "ABCDE"
+        
+            }
+
++ Response 204 
+
 ### Delete [DELETE]
-Delete a alternativetype
+
++ Request 
+
+    + Headers
+
+            Location: /alternativetypes/{source_id}
+
 + Response 204
-HTTP Status Codes : No Content
+
 ### Update [PUT]
-Update a alternativetype
-+ Response 204
-HTTP Status Codes : No Content
 
-## subject Collection [/subjects]
-## subject [/subjects/{subject_id}]    
++ Request 
 
-### List All subjects [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
+    + Headers
 
-HTTP Status Codes : No Content
-### View a subject Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New subject [POST]
-+ Request (application/json)
+            Location: /alternativetypes/{source_id}
+    + Body
+
+            {
+        
+                "description": "A..E",
+                "options": "ABCDE"
+        
+            }
+                
 + Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a subject
-+ Response 204
-HTTP Status Codes : No Content
-### Update [PUT]
-Update a subject
-+ Response 204
-HTTP Status Codes : No Content
-(name,abbreviation)
-Nome básico da disciplina
 
-## content Collection [/contents]
-## content [/contents/{content_id}]    
-
-### List All contents [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No Conten.t
-### View a content Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New content [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a content
-+ Response 204
-HTTP Status Codes : No Content
-### Update [PUT]
-Update a content
-+ Response 204
-HTTP Status Codes : No Content
-(subject*,description,)
-O conteúdo de uma disciplina indica os assuntos aplicados tipo: equação do 2º grau, verbo, etc.
-
-## user Collection [/users]
-## user [/users/{user_id}]    
-
-### List All users [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No Content
-### View a user Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New user [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a user
-+ Response 204
-HTTP Status Codes : No Content
-### Update [PUT]
-Update a user
-+ Response 204
-HTTP Status Codes : No Content
-
-(login,password,active,email,register_at,score)
-Como poderemos assegurar que caso o usuário faça mal uso da aplicação, seja penalizado? log com ip?
-
-## userevaluation Collection [/userevaluations]
-## userevaluation [/userevaluations/{userevaluation_id}]    
-
-### List All userevaluations [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No C.ontent
-### View a userevaluation Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New userevaluation [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a userevaluation
-+ Response 204
-HTTP Status Codes : No C.ontent
-### Update [PUT]
-Update a userevaluation
-+ Response 204
-HTTP Status Codes : No C.ontent
-(usere*,userevaluator*,score,publish_at)
-Todo usuário recebe avaliações de outro usuário que indicará sua reputação
-
-## adinfo Collection [/adinfos]
-## adinfo [/adinfos/{adinfo_id}]    
-
-### List All adinfos [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No C.ontent
-### View a adinfo Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New adinfo [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a adinfo
-+ Response 204
-HTTP Status Codes : No C.ontent
-### Update [PUT]
-Update a adinfo
-+ Response 204
-HTTP Status Codes : No C.ontent
-(question*,description)
-A informação adicional de uma questão conterá metadados úteis na sua avaliação. Verificar definição LOR
-
-## area Collection [/areas]
-## area [/areas/{area_id}]    
-
-### List All areas [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No C.ontent
-### View a area Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New area [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a area
-+ Response 204
-HTTP Status Codes : No C.ontent
-### Update [PUT]
-Update a area
-+ Response 204
-HTTP Status Codes : No C.ontent
-(name,description)
-Área principal do professor
-
-## evaluation Collection [/evaluations]
-## evaluation [/evaluations/{evaluation_id}]    
-
-### List All evaluations [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No C.ontent
-### View a evaluation Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New evaluation [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a evaluation
-+ Response 204
-HTTP Status Codes : No C.ontent
-### Update [PUT]
-Update a evaluation
-+ Response 204
-HTTP Status Codes : No C.ontent
-(user*,description,publish_at,preview_at,place_name)
-A avaliação é do professor que será aplicado em uma sala de aula, e tem data de publicação, 
-data prevista de aplicação, local da prova para que aparece o nome da instituição
-Ex: 
-Escola XYZ
-Aluno: JOÂO
-Sendo a avaliação gerada num odt, o professor tem a liberdade para alterar o cabeçalho
-
-## evaluationversion Collection [/evaluationversions]
-## evaluationversion [/evaluationversions/{evaluationversion_id}]    
-
-### List All evaluationversions [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No C.ontent
-### View a evaluationversion Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New evaluationversion [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a evaluationversion
-+ Response 204
-HTTP Status Codes : No C.ontent
-### Update [PUT]
-Update a evaluationversion
-+ Response 204
-HTTP Status Codes : No C.ontent
-(evaluation*,version,publish_at)
-As versões de uma avaliação são usadas para impedir a cola na aplicação, em cada versão existem questões e alternativas sorteadas aleatoriamente
-
-## question Collection [/questions]
-## question [/questions/{question_id}]    
-
-
-### List All questions [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No C.ontent
-### View a question Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New question [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a question
-+ Response 204
-HTTP Status Codes : No C.ontent
-### Update [PUT]
-Update a question
-+ Response 204
-HTTP Status Codes : No C.ontent
-
-(description,publish_at,accepta_at,area*,adinfo*)
-A questão é um texto com imagens, fórmulas e que serão apresentadas para o aluno na elaboração da avaliação
-
-## questionversion Collection [/questionversions]
-## questionversion [/questionversions/{questionversion_id}]    
-
-
-### List All questionversions [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No C.ontent
-### View a questionversion Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New questionversion [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a questionversion
-+ Response 204
-HTTP Status Codes : No C.ontent
-### Update [PUT]
-Update a questionversion
-+ Response 204
-HTTP Status Codes : No C.ontent
-(question*,version,publish_at,accept_at)
-Sempre que uma questão for criada ou alterada, será criada uma versão que para se tornar pública, será necessário a avaliação e o aceite de 3 ou mais usuários
-
-## questionevaluation Collection [/questionevaluations]
-## questionevaluation [/questionevaluations/{questionevaluation_id}]    
-
-
-### List All questionevaluations [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-+ Response 204 (application/json)
-[
-    {      
-        "description": "There aren't #"
-    }    
-]
-
-HTTP Status Codes : No C.ontent
-### View a questionevaluation Detail [GET]
-+ Response 200 (application/json)
-HTTP Status Codes : Ok
-### Create a New questionevaluation [POST]
-+ Request (application/json)
-+ Response 201 (application/json)
-HTTP Status Codes : Created
-### Delete [DELETE]
-Delete a questionevaluation
-+ Response 204
-HTTP Status Codes : No C.ontent
-### Update [PUT]
-Update a questionevaluation
-+ Response 204
-HTTP Status Codes : No C.ontent
-(questionversion*, score, accept, publish_at)
-O usuário avalia n questões, aprovando, ou não, o conteúo.
+        Result OK for new
