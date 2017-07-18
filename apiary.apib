@@ -12,11 +12,11 @@ After sending a source as a filter, list all those sources
 + Request (application/json)
 
             {
-        
+                
                 "title": "ENEM/2015",
                 "published_at": "2017-07-11",
                 "year": "2015",
-                "institute": "UFPB"
+                "institute": "UFPB",
                 "link": "http://www.ufpb.br/arquivos/enem2015"
             
             }
@@ -32,7 +32,7 @@ After sending a source as a filter, list all those sources
                     "title": "ENEM/2014",
                     "published_at": "2017-07-11",
                     "year": "2014",
-                    "institute": "UFPB"
+                    "institute": "UFPB",
                     "link": "http://www.ufpb.br/arquivos/enem2014"
             
                 },
@@ -41,7 +41,7 @@ After sending a source as a filter, list all those sources
                     "title": "ENEM/2015",
                     "published_at": "2017-07-11",
                     "year": "2015",
-                    "institute": "UFPB"
+                    "institute": "UFPB",
                     "link": "http://www.ufpb.br/arquivos/enem2015"
 
                 }
@@ -55,7 +55,7 @@ After sending a source as a filter, list all those sources
                 "title": "ENEM/2015",
                 "published_at": "2017-07-11",
                 "year": "2015",
-                "institute": "UFPB"
+                "institute": "UFPB",
                 "link": "http://www.ufpb.br/arquivos/enem2015"
             
             }
@@ -63,75 +63,7 @@ After sending a source as a filter, list all those sources
 + Response 204
 
 
-## Source [/source/{source_id}]
-
-Answer from a source through a *source_id*.
-
-### Get a source [GET]
-+ Request 
-
-    + Headers
-
-            Location: /source/{source_id}
-
-+ Response 200 (application/json)
-
-    + Body
-
-            [
-            
-                {
-            
-                    "title": "ENEM/2014",
-                    "published_at": "2017-07-11",
-                    "year": "2014",
-                    "institute": "UFPB"
-                    "link": "http://www.ufpb.br/arquivos/enem2014"
-            
-                }
-                
-            ]    
-
-+ Response 204
-
-### Delete [DELETE]
-
-+ Request 
-
-    + Headers
-
-            Location: /source/{source_id}
-
-+ Response 204
-
-### Update [PUT]
-
-+ Request 
-
-    + Headers
-
-            Location: /source/{source_id}
-    + Body
-
-            [
-            
-                {
-            
-                    "title": "other title",
-                    "published_at": "other 2017-07-11",
-                    "year": "other 2014",
-                    "institute": "UFPB"
-                    "link": "other http://www.ufpb.br/arquivos/enem2014"
-            
-                }
-                
-            ]    
-
-+ Response 204
-
-## Source [/source]
-
-### Create a New Source [POST]
+### Create a New Source  [POST]
 
 Create a new source through an object
 
@@ -141,7 +73,7 @@ Create a new source through an object
             "title": "NEW - ENEM/2015",
             "published_at": "NEW - 2017-07-11",
             "year": "NEW - 2015",
-            "institute": "UFPB"
+            "institute": "UFPB",
             "link": "NEW - http://www.ufpb.br/arquivos/enem2017"
         }
 
@@ -149,6 +81,65 @@ Create a new source through an object
 
         Result OK for new 
 
+## Source [/sources/{source_id}]
+
+Answer from a source through a *source_id*.
+
+### Get a source [GET]
++ Request 
+
+    + Headers
+
+            Location: /sources/{source_id}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+        
+                "title": "ENEM/2014",
+                "published_at": "2017-07-11",
+                "year": "2014",
+                "institute": "UFPB",
+                "link": "http://www.ufpb.br/arquivos/enem2014"
+        
+            }
+
++ Response 204 
+
+### Delete [DELETE]
+
++ Request 
+
+    + Headers
+
+            Location: /sources/{source_id}
+
++ Response 204
+
+### Update [PUT]
+
++ Request 
+
+    + Headers
+
+            Location: /sources/{source_id}
+    + Body
+
+            {
+        
+                "title": "other title",
+                "published_at": "other 2017-07-11",
+                "year": "other 2014",
+                "institute": "UFPB",
+                "link": "other http://www.ufpb.br/arquivos/enem2014"
+        
+            }
+                
++ Response 201 (application/json)
+
+        Result OK for new 
 
 
 ## alternativetype Collection [/alternativetypes]
