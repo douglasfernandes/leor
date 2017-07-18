@@ -192,7 +192,7 @@ List all alternativetypes
 
 ### Create a New Source  [POST]
 
-Create a new source through an object
+Create a new AlternativeType through an object
 
 + Request (application/json)
 
@@ -207,16 +207,14 @@ Create a new source through an object
 
         Result OK for new 
 
-## Source [/alternativetypes/{source_id}]
-
-Answer from a source through a *source_id*.
+## Source [/alternativetypes/{alternativetypes_id}]
 
 ### Get a source [GET]
 + Request 
 
     + Headers
 
-            Location: /alternativetypes/{source_id}
+            Location: /alternativetypes/{alternativetypes_id}
 
 + Response 200 (application/json)
 
@@ -237,7 +235,7 @@ Answer from a source through a *source_id*.
 
     + Headers
 
-            Location: /alternativetypes/{source_id}
+            Location: /alternativetypes/{alternativetypes_id}
 
 + Response 204
 
@@ -247,7 +245,7 @@ Answer from a source through a *source_id*.
 
     + Headers
 
-            Location: /alternativetypes/{source_id}
+            Location: /alternativetypes/{alternativetypes_id}
     + Body
 
             {
@@ -255,6 +253,269 @@ Answer from a source through a *source_id*.
                 "description": "A..E",
                 "options": "ABCDE"
         
+            }
+                
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## Subjects Collection [/subjects]
+
+### List All Subjects [GET]
+
+List all subjects 
+
++ Request (application/json)
+
+            {
+                
+                "description": "A..E",
+                "options": "ABCDE"
+            
+            }
+
++ Response 200 (application/json)
+
+    + Body
+        
+            [
+            
+                {
+            
+                "description": "A..E",
+                "options": "ABCDE"
+            
+                },
+                {
+            
+                "description": "A..E",
+                "options": "ABCDE"
+
+                }
+                
+            ]   
+
++ Request (application/json)
+
+            {
+        
+                "description": "A..E",
+                "options": "ABCDE"
+            
+            }
+
++ Response 204
+
+
+### Create a New Subject  [POST]
+
++ Request (application/json)
+
+        {
+
+                "description": "A..E",
+                "options": "ABCDE"
+
+        }
+
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## Subjects [/subjects/{subject_id}]
+
+Answer from a subject through a *subject_id*.
+
+### Get a subject [GET]
++ Request 
+
+    + Headers
+
+            Location: /subjects/{subject_id}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+        
+                "description": "A..E",
+                "options": "ABCDE"
+        
+            }
+
++ Response 204 
+
+### Delete [DELETE]
+
++ Request 
+
+    + Headers
+
+            Location: /subjects/{subject_id}
+
++ Response 204
+
+### Update [PUT]
+
++ Request 
+
+    + Headers
+
+            Location: /subjects/{subject_id}
+    + Body
+
+            {
+        
+                "description": "A..E",
+                "options": "ABCDE"
+        
+            }
+                
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## Contents Collection [/contents]
+
+### List All contents [GET]
+
+List all contents 
+
++ Request (application/json)
+
+            {
+                        "subject" :
+                        {
+                
+                                    "description": "A..E",
+                                    "options": "ABCDE"
+                        },
+                        "description": "Adjetivos"
+            
+            }
+
++ Response 200 (application/json)
+
+    + Body
+        
+            [
+                        {
+                                    "subject" :
+                                    {
+                            
+                                                "description": "A..E",
+                                                "options": "ABCDE"
+                                    },
+                                    "description": "Adjetivos"
+            
+                        },
+                        {
+                                    "subject" :
+                                    {
+                            
+                                                "description": "A..E",
+                                                "options": "ABCDE"
+                                    },
+                                    "description": "Adjetivos"
+            
+                        }
+
+            ]   
+
++ Request (application/json)
+
+            {
+                        "subject" :
+                        {
+                
+                                    "description": "A..E",
+                                    "options": "ABCDE"
+                        },
+                        "description": "Adjetivos"
+            
+            }
+
++ Response 204
+
+
+### Create a new content  [POST]
+
+Create a new content through an object
+
++ Request (application/json)
+
+            {
+                        "subject" :
+                        {
+                
+                                    "description": "A..E",
+                                    "options": "ABCDE"
+                        },
+                        "description": "Adjetivos"
+            
+            }
+
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## Content [/contents/{content_id}]
+
+Answer from a content through a *content_id*.
+
+### Get a content [GET]
++ Request 
+
+    + Headers
+
+            Location: /contents/{content_id}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                        "subject" :
+                        {
+                
+                                    "description": "A..E",
+                                    "options": "ABCDE"
+                        },
+                        "description": "Adjetivos"
+            
+            }
+
++ Response 204 
+
+### Delete [DELETE]
+
++ Request 
+
+    + Headers
+
+            Location: /contents/{content_id}
+
++ Response 204
+
+### Update [PUT]
+
++ Request 
+
+    + Headers
+
+            Location: /contents/{content_id}
+    + Body
+
+            {
+                        "subject" :
+                        {
+                
+                                    "description": "A..E",
+                                    "options": "ABCDE"
+                        },
+                        "description": "Adjetivos"
+            
             }
                 
 + Response 201 (application/json)
