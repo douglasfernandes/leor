@@ -11,59 +11,39 @@ After sending a source as a filter, list all those sources
 
 + Request (application/json)
 
-            {
-                
-                "title": "ENEM/2015",
-                "published_at": "2017-07-11",
-                "year": "2015",
-                "institute": "UFPB",
-                "link": "http://www.ufpb.br/arquivos/enem2015"
-            
-            }
+        {
+            "title": "ENEM/2015",
+            "published_at": "2017-07-11",
+            "year": "2015",
+            "institute": "UFPB",
+            "link": "http://www.ufpb.br/arquivos/enem2015"
+        }
 
 + Response 200 (application/json)
 
     + Body
-        
+    
             [
-            
                 {
-            
                     "title": "ENEM/2014",
                     "published_at": "2017-07-11",
                     "year": "2014",
                     "institute": "UFPB",
                     "link": "http://www.ufpb.br/arquivos/enem2014"
-            
                 },
                 {
-            
                     "title": "ENEM/2015",
                     "published_at": "2017-07-11",
                     "year": "2015",
                     "institute": "UFPB",
                     "link": "http://www.ufpb.br/arquivos/enem2015"
-
                 }
-                
             ]   
-
-+ Request (application/json)
-
-            {
-        
-                "title": "ENEM/2015",
-                "published_at": "2017-07-11",
-                "year": "2015",
-                "institute": "UFPB",
-                "link": "http://www.ufpb.br/arquivos/enem2015"
-            
-            }
 
 + Response 204
 
 
-### Create a New Source  [POST]
+### Create a new source  [POST]
 
 Create a new source through an object
 
@@ -81,7 +61,7 @@ Create a new source through an object
 
         Result OK for new 
 
-## Source [/sources/{source_id}]
+## source [/sources/{source_id}]
 
 Answer from a source through a *source_id*.
 
@@ -97,13 +77,11 @@ Answer from a source through a *source_id*.
     + Body
 
             {
-        
                 "title": "ENEM/2014",
                 "published_at": "2017-07-11",
                 "year": "2014",
                 "institute": "UFPB",
                 "link": "http://www.ufpb.br/arquivos/enem2014"
-        
             }
 
 + Response 204 
@@ -128,13 +106,11 @@ Answer from a source through a *source_id*.
     + Body
 
             {
-        
                 "title": "other title",
                 "published_at": "other 2017-07-11",
                 "year": "other 2014",
                 "institute": "UFPB",
                 "link": "other http://www.ufpb.br/arquivos/enem2014"
-        
             }
                 
 + Response 201 (application/json)
@@ -142,89 +118,69 @@ Answer from a source through a *source_id*.
         Result OK for new 
 
 
-## AlternativeType Collection [/alternativetypes]
+## alternativetype Collection [/alternativetypes]
 
 ### List All alternativetypes [GET]
 
-List all alternativetypes 
+List all alternative types 
+In a question, you have to choose an alternative type like "ABCDE", "VF", etc.
 
 + Request (application/json)
 
-            {
-                
-                "description": "A..E",
-                "options": "ABCDE"
-            
-            }
+        {
+            "description": "A..E",
+            "options": "ABCDE"
+        }
 
 + Response 200 (application/json)
 
     + Body
         
             [
-            
                 {
-            
-                "description": "A..E",
-                "options": "ABCDE"
-            
+                    "description": "A..E",
+                    "options": "ABCDE"
                 },
                 {
-            
-                "description": "A..E",
-                "options": "ABCDE"
-
+                    "description": "A..E",
+                    "options": "ABCDE"
                 }
-                
             ]   
-
-+ Request (application/json)
-
-            {
-        
-                "description": "A..E",
-                "options": "ABCDE"
-            
-            }
 
 + Response 204
 
 
-### Create a New Source  [POST]
+### Create a new alternativetypes  [POST]
 
 Create a new AlternativeType through an object
 
 + Request (application/json)
 
         {
-
-                "description": "A..E",
-                "options": "ABCDE"
-
+            "description": "A..E",
+            "options": "ABCDE"
         }
 
 + Response 201 (application/json)
 
         Result OK for new 
 
-## Source [/alternativetypes/{alternativetypes_id}]
+## alternativetypes [/alternativetypes/{alternativetype_id}]
 
-### Get a source [GET]
+### Get a alternativetypes [GET]
 + Request 
 
     + Headers
 
-            Location: /alternativetypes/{alternativetypes_id}
+            Location: /alternativetypes/{alternativetype_id}
 
 + Response 200 (application/json)
 
     + Body
 
             {
-        
                 "description": "A..E",
                 "options": "ABCDE"
-        
             }
 
 + Response 204 
@@ -235,7 +191,7 @@ Create a new AlternativeType through an object
 
     + Headers
 
-            Location: /alternativetypes/{alternativetypes_id}
+            Location: /alternativetypes/{alternativetype_id}
 
 + Response 204
 
@@ -245,84 +201,63 @@ Create a new AlternativeType through an object
 
     + Headers
 
-            Location: /alternativetypes/{alternativetypes_id}
+            Location: /alternativetypes/{alternativetype_id}
     + Body
 
             {
-        
                 "description": "A..E",
                 "options": "ABCDE"
-        
             }
-                
+   
 + Response 201 (application/json)
 
         Result OK for new 
 
-## Subjects Collection [/subjects]
+## subjects Collection [/subjects]
 
-### List All Subjects [GET]
+### List All subjects [GET]
 
 List all subjects 
 
 + Request (application/json)
 
-            {
-                
-                "description": "A..E",
-                "options": "ABCDE"
-            
-            }
+        {
+            "name": "geo",
+            "abbreviation": "GEO"
+        }
 
 + Response 200 (application/json)
 
     + Body
         
             [
-            
                 {
-            
-                "description": "A..E",
-                "options": "ABCDE"
-            
+                    "name": "GEOGRAFIA",
+                    "abbreviation": "GEOG"
                 },
                 {
-            
-                "description": "A..E",
-                "options": "ABCDE"
-
+                    "name": "GEOLOGIA I",
+                    "abbreviation": "GEOI"
                 }
-                
             ]   
-
-+ Request (application/json)
-
-            {
-        
-                "description": "A..E",
-                "options": "ABCDE"
-            
-            }
 
 + Response 204
 
 
-### Create a New Subject  [POST]
+### Create a new subject  [POST]
 
 + Request (application/json)
 
         {
-
                 "description": "A..E",
                 "options": "ABCDE"
-
         }
 
 + Response 201 (application/json)
 
         Result OK for new 
 
-## Subjects [/subjects/{subject_id}]
+## subjects [/subjects/{subject_id}]
 
 Answer from a subject through a *subject_id*.
 
@@ -338,10 +273,8 @@ Answer from a subject through a *subject_id*.
     + Body
 
             {
-        
                 "description": "A..E",
                 "options": "ABCDE"
-        
             }
 
 + Response 204 
@@ -366,10 +299,8 @@ Answer from a subject through a *subject_id*.
     + Body
 
             {
-        
                 "description": "A..E",
                 "options": "ABCDE"
-        
             }
                 
 + Response 201 (application/json)
@@ -378,63 +309,47 @@ Answer from a subject through a *subject_id*.
 
 ## Contents Collection [/contents]
 
+A content has a subject
+
 ### List All contents [GET]
 
 List all contents 
 
 + Request (application/json)
 
+        {
+            "subject" :
             {
-                        "subject" :
-                        {
-                
-                                    "description": "A..E",
-                                    "options": "ABCDE"
-                        },
-                        "description": "Adjetivos"
-            
-            }
+    
+                "description": "A..E",
+                "options": "ABCDE"
+            },
+            "description": "Adjetivos"
+        
+        }
 
 + Response 200 (application/json)
 
     + Body
         
             [
-                        {
-                                    "subject" :
-                                    {
-                            
-                                                "description": "A..E",
-                                                "options": "ABCDE"
-                                    },
-                                    "description": "Adjetivos"
-            
-                        },
-                        {
-                                    "subject" :
-                                    {
-                            
-                                                "description": "A..E",
-                                                "options": "ABCDE"
-                                    },
-                                    "description": "Adjetivos"
-            
-                        }
-
+                {
+                    "subject" :
+                    {
+                                "description": "A..E",
+                                "options": "ABCDE"
+                    },
+                    "description": "Adjetivos"
+                },
+                {
+                    "subject" :
+                    {
+                                "description": "A..E",
+                                "options": "ABCDE"
+                    },
+                    "description": "Adjetivos"
+                }
             ]   
-
-+ Request (application/json)
-
-            {
-                        "subject" :
-                        {
-                
-                                    "description": "A..E",
-                                    "options": "ABCDE"
-                        },
-                        "description": "Adjetivos"
-            
-            }
 
 + Response 204
 
@@ -446,14 +361,13 @@ Create a new content through an object
 + Request (application/json)
 
             {
-                        "subject" :
-                        {
-                
-                                    "description": "A..E",
-                                    "options": "ABCDE"
-                        },
-                        "description": "Adjetivos"
-            
+                "subject" :
+                {
+        
+                            "description": "A..E",
+                            "options": "ABCDE"
+                },
+                "description": "Adjetivos"
             }
 
 + Response 201 (application/json)
@@ -462,6 +376,7 @@ Create a new content through an object
 
 ## Content [/contents/{content_id}]
 
+A content has a subject
 Answer from a content through a *content_id*.
 
 ### Get a content [GET]
@@ -476,16 +391,15 @@ Answer from a content through a *content_id*.
     + Body
 
             {
-                        "subject" :
-                        {
-                
-                                    "description": "A..E",
-                                    "options": "ABCDE"
-                        },
-                        "description": "Adjetivos"
-            
+                "subject" :
+                {
+        
+                    "description": "A..E",
+                    "options": "ABCDE"
+                },
+                "description": "Adjetivos"
             }
-
+            
 + Response 204 
 
 ### Delete [DELETE]
@@ -508,14 +422,13 @@ Answer from a content through a *content_id*.
     + Body
 
             {
-                        "subject" :
-                        {
-                
-                                    "description": "A..E",
-                                    "options": "ABCDE"
-                        },
-                        "description": "Adjetivos"
-            
+                "subject" :
+                {
+        
+                    "description": "A..E",
+                    "options": "ABCDE"
+                },
+                "description": "Adjetivos"
             }
                 
 + Response 201 (application/json)
