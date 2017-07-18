@@ -61,7 +61,7 @@ Create a new source through an object
 
         Result OK for new 
 
-## source [/sources/{source_id}]
+## Source [/sources/{source_id}]
 
 Answer from a source through a *source_id*.
 
@@ -118,7 +118,7 @@ Answer from a source through a *source_id*.
         Result OK for new 
 
 
-## alternativetype Collection [/alternativetypes]
+## Alternativetype Collection [/alternativetypes]
 
 ### List All alternativetypes [GET]
 
@@ -165,7 +165,7 @@ Create a new AlternativeType through an object
 
         Result OK for new 
 
-## alternativetypes [/alternativetypes/{alternativetype_id}]
+## Alternativetypes [/alternativetypes/{alternativetype_id}]
 
 ### Get a alternativetypes [GET]
 + Request 
@@ -213,7 +213,7 @@ Create a new AlternativeType through an object
 
         Result OK for new 
 
-## subjects Collection [/subjects]
+## Subjects Collection [/subjects]
 
 ### List All subjects [GET]
 
@@ -257,7 +257,7 @@ List all subjects
 
         Result OK for new 
 
-## subjects [/subjects/{subject_id}]
+## Subjects [/subjects/{subject_id}]
 
 Answer from a subject through a *subject_id*.
 
@@ -429,6 +429,122 @@ Answer from a content through a *content_id*.
                     "options": "ABCDE"
                 },
                 "description": "Adjetivos"
+            }
+                
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## Users Collection [/users]
+
+user(login,password,active,email,register_at,score)
+Como poderemos assegurar que caso o usuário faça mal uso da aplicação, seja penalizado? log com ip?
+
+### List All users [GET]
+
+List all users 
+
++ Request (application/json)
+
+        {
+            "login": "user1",
+            "password": "123456",
+            "active": "true",
+            "email": "user1@mail.com",
+            "register_at": "2017-07-18",
+            "score": "4,5"        
+        }
+
++ Response 200 (application/json)
+
+    + Body
+        
+            [
+                {
+                    "login": "user1",
+                    "password": "123456",
+                    "active": "true",
+                    "email": "user1@mail.com",
+                    "register_at": "2017-07-18",
+                    "score": "4,5"        
+                }
+            ]   
+
++ Response 204
+
+
+### Create a new user  [POST]
+
+Create a new user through an object
+
++ Request (application/json)
+
+            {
+                "login": "user1",
+                "password": "123456",
+                "active": "true",
+                "email": "user1@mail.com",
+                "register_at": "2017-07-18",
+                "score": "4,5"        
+            }
+
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## User [/users/{user_id}]
+
+A user has a subject
+Answer from a user through a *user_id*.
+
+### Get a user [GET]
++ Request 
+
+    + Headers
+
+            Location: /users/{user_id}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "login": "user1",
+                "password": "123456",
+                "active": "true",
+                "email": "user1@mail.com",
+                "register_at": "2017-07-18",
+                "score": "4,5"        
+            }
+            
++ Response 204 
+
+### Delete [DELETE]
+
++ Request 
+
+    + Headers
+
+            Location: /users/{user_id}
+
++ Response 204
+
+### Update [PUT]
+
++ Request 
+
+    + Headers
+
+            Location: /users/{user_id}
+    + Body
+
+            {
+                "login": "user1",
+                "password": "123456",
+                "active": "true",
+                "email": "user1@mail.com",
+                "register_at": "2017-07-18",
+                "score": "4,5"        
             }
                 
 + Response 201 (application/json)
