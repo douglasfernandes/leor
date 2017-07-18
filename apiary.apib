@@ -549,4 +549,101 @@ Answer from a user through a *user_id*.
                 
 + Response 201 (application/json)
 
+        Result OK for new 
+        
+
+## UserEvaluations Collection [/userevaluations]
+
+userevaluation(user*,userevaluator*,score,publish_at)
+Todo usuário recebe avaliações de outro usuário que indicará sua reputação
+
+### List All UserEvaluations [GET]
+
+List all userevaluations 
+
++ Request (application/json)
+
+        {
+            "user": "user1",
+            "userevaluator": "user"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+        
+            [
+                {
+                    "user": "user1",
+                    "userevaluator": "user"
+                }
+            ]   
+
++ Response 204
+
+
+### Create a new UserEvaluation  [POST]
+
+Create a new Userevaluation through an object
+
++ Request (application/json)
+
+            {
+                "user": "user1",
+                "userevaluator": "user"
+            }
+
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## userevaluation [/userevaluations/{userevaluation_id}]
+
+A userevaluation has a subject
+Answer from a userevaluation through a *userevaluation_id*.
+
+### Get a userevaluation [GET]
++ Request 
+
+    + Headers
+
+            Location: /userevaluations/{userevaluation_id}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "user": "user1",
+                "userevaluator": "user"
+            }
+            
++ Response 204 
+
+### Delete [DELETE]
+
++ Request 
+
+    + Headers
+
+            Location: /userevaluations/{userevaluation_id}
+
++ Response 204
+
+### Update [PUT]
+
++ Request 
+
+    + Headers
+
+            Location: /userevaluations/{userevaluation_id}
+    + Body
+
+            {
+                "user": "user1",
+                "userevaluator": "user"
+            }
+                
++ Response 201 (application/json)
+
         Result OK for new
