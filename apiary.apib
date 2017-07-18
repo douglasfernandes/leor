@@ -597,7 +597,7 @@ Create a new Userevaluation through an object
 
         Result OK for new 
 
-## userevaluation [/userevaluations/{userevaluation_id}]
+## UserEvaluation [/userevaluations/{userevaluation_id}]
 
 A userevaluation has a subject
 Answer from a userevaluation through a *userevaluation_id*.
@@ -642,6 +642,216 @@ Answer from a userevaluation through a *userevaluation_id*.
             {
                 "user": "user1",
                 "userevaluator": "user"
+            }
+                
++ Response 201 (application/json)
+
+        Result OK for new 
+    
+## Areas Collection [/areas]
+
+area(name,description)
+Main teacher's area
+
+### List All areas [GET]
+
+List all areas 
+
++ Request (application/json)
+
+        {
+            "name": "matemática",
+            "description": "Matemática e suas tecnologias"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+        
+            [
+                {
+                    "name": "matemática",
+                    "description": "Matemática e suas tecnologias"
+                }
+            ]   
+
++ Response 204
+
+
+### Create a new area  [POST]
+
+Create a new area through an object
+
++ Request (application/json)
+
+            {
+                "name": "matemática",
+                "description": "Matemática e suas tecnologias"
+            }
+
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## Area [/areas/{area_id}]
+
+A user has an area
+
+### Get a area [GET]
++ Request 
+
+    + Headers
+
+            Location: /areas/{area_id}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "name": "matemática",
+                "description": "Matemática e suas tecnologias"
+            }
+            
++ Response 204 
+
+### Delete [DELETE]
+
++ Request 
+
+    + Headers
+
+            Location: /areas/{area_id}
+
++ Response 204
+
+### Update [PUT]
+
++ Request 
+
+    + Headers
+
+            Location: /areas/{area_id}
+    + Body
+
+            {
+                "name": "matemática",
+                "description": "Matemática e suas tecnologias"
+            }
+                
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## Evaluations Collection [/evaluations]
+
+Data diciotnary:
+evaluation(user*,description,publish_at,preview_at,place_name)
+
+Resume:
+An evaluationn is from a teacher and will be aplly in class room.
+Ex: 
+School XYZ
+Student: ____________________ 
+
+That evaluation was made in an odt file and the teacher is free to change it.
+
+### List All evaluations [GET]
+
+List all evaluations 
+
+user*,description,publish_at,preview_at,place_name
+
++ Request (application/json)
+
+        {
+            "user": "user1",
+            "description": "Period 1 - 8th - Mathematic",
+            "publish_at": "2017-07-18",
+            "place_name": "School X",
+        }
+
++ Response 200 (application/json)
+
+    + Body
+        
+            [
+                {
+                    "user": "user1",
+                    "description": "Period 1 - 8th - Mathematic",
+                    "publish_at": "2017-07-18",
+                    "place_name": "School X",
+                }
+            ]   
+
++ Response 204
+
+
+### Create a new evaluation  [POST]
+
+Create a new evaluation through an object
+
++ Request (application/json)
+
+            {
+                "user": "user1",
+                "description": "Period 1 - 8th - Mathematic",
+                "publish_at": "2017-07-18",
+                "place_name": "School X",
+            }
+
++ Response 201 (application/json)
+
+        Result OK for new 
+
+## evaluation [/evaluations/{evaluation_id}]
+
+A user has many evaluations
+
+### Get a evaluation [GET]
++ Request 
+
+    + Headers
+
+            Location: /evaluations/{evaluation_id}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "user": "user1",
+                "description": "Period 1 - 8th - Mathematic",
+                "publish_at": "2017-07-18",
+                "place_name": "School X",
+            }
+            
++ Response 204 
+
+### Delete [DELETE]
+
++ Request 
+
+    + Headers
+
+            Location: /evaluations/{evaluation_id}
+
++ Response 204
+
+### Update [PUT]
+
++ Request 
+
+    + Headers
+
+            Location: /evaluations/{evaluation_id}
+    + Body
+
+            {
+                "user": "user1",
+                "description": "Period 1 - 8th - Mathematic",
+                "publish_at": "2017-07-18",
+                "place_name": "School X",
             }
                 
 + Response 201 (application/json)
